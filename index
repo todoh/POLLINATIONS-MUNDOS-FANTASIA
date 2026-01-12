@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy World Architect - Pollinations.ai</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Fantasy World Architect</h1>
+            <p>Powered by Pollinations.ai</p>
+        </header>
+
+        <section class="input-section">
+            <textarea id="userPrompt" placeholder="Describe tu mundo (ej: Un reino submarino hecho de cristal donde los caballeros montan caballitos de mar gigantes...)"></textarea>
+            <button id="generateBtn" onclick="generateWorld()">Construir Mundo</button>
+        </section>
+
+        <div id="loading" class="hidden">
+            <div class="loader"></div>
+            <p id="loadingText">Invocando a los espíritus de la IA...</p>
+        </div>
+
+        <main id="resultArea" class="hidden">
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('characters')">Personajes</button>
+                <button class="tab-btn" onclick="openTab('locations')">Ubicaciones</button>
+                <button class="tab-btn" onclick="openTab('timeline')">Línea Temporal</button>
+                <button class="tab-btn" onclick="openTab('story')">Historia (5 Capítulos)</button>
+            </div>
+
+            <div id="characters" class="tab-content active">
+                <h2>Dramatis Personae</h2>
+                <div class="grid-container" id="charList"></div>
+            </div>
+
+            <div id="locations" class="tab-content">
+                <h2>Lugares del Mundo</h2>
+                <div class="grid-container" id="locList"></div>
+            </div>
+
+            <div id="timeline" class="tab-content">
+                <h2>Crónicas Antiguas</h2>
+                <ul class="timeline-list" id="timelineList"></ul>
+            </div>
+
+            <div id="story" class="tab-content">
+                <h2>La Saga</h2>
+                <div id="storyContainer"></div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
